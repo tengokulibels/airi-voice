@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: airi-voice
+    runtime: docker
+    plan: starter        # 512MB RAM - coba dulu; upgrade ke "standard" (2GB) kalau OOM saat load model
+    healthCheckPath: /
+    envVars:
+      - key: MODEL_PATH
+        value: model/NinaIseri_e200_s11600.pth
